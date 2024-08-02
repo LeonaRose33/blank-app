@@ -6,3 +6,4 @@ st.write(
 )
 secret = st.secrets.items()
 st.write(st.secrets["DB_USERNAME"])
+st.write(st.secrets["DB"])
