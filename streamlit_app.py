@@ -6,9 +6,10 @@ import streamlit as st
 import pandas as pd
 import mysql.connector
 
-connectiondb = st.secrets['connectiondb']
+connectiondb = st.secrets["connectiondb"]
 
 with mysql.connector.connect(**connectiondb) as conn:
+    st.write(conn)
     cursor = conn.cursor()
     query = "SELECT capacity FROM capacities"
     print(f'Execute \n{query}')
