@@ -9,5 +9,5 @@ conn = st.connection('sql_connection', 'sql')
 query= f"""SELECT capacity FROM capacities"""
 st.write(conn)
 st.write(query)
-res = conn.cursor().execute(query, ttl=30)
+res = conn.execute(query)
 st.write(res)
