@@ -6,7 +6,7 @@ st.write(
 )
 
 conn = st.connection('sql_connection', 'sql')
-query= f""" SELECT * FROM defaultdb """
+query= f""" SELECT * FROM capacities"""
 res = conn.query(query)
 if res:
     st.dataframe(res)
