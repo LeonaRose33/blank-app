@@ -7,5 +7,7 @@ st.write(
 
 conn = st.connection('sql_connection', 'sql')
 query= f"""SELECT * FROM capacities"""
+st.write(conn)
+st.write(query)
 res = conn.query(query)
 st.write(res)
