@@ -6,6 +6,6 @@ st.write(
 )
 
 conn = st.connection('sql_connection', 'sql')
-query= f""" SELECT * FROM capacities"""
+query= f"""SELECT * FROM capacities"""
 res = conn.query(query)
 st.write(res)
