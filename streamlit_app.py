@@ -1,4 +1,5 @@
 import streamlit as st
+import sqlalchemy
 
 st.title("🎈 My new app")
 st.write(
