@@ -14,6 +14,7 @@ with mysql.connector.connect(**CONNECTION_DB) as conn:
     results = cursor.fetchall()
     if results:
         columns = [col[0] for col in cursor.description]
-        st.success('Query executed with SUCCESS')      
+        st.success('Query executed with SUCCESS')
+        st.write(results)
         st.dataframe(results, hide_index=False)
 
