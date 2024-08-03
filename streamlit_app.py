@@ -1,5 +1,6 @@
 import streamlit as st
 import mysql.connector
+import pandas as pd
 
 CONNECTION_DB = st.secrets["connectiondb"]
 
@@ -15,6 +16,5 @@ with mysql.connector.connect(**CONNECTION_DB) as conn:
     if results:
         columns = [col[0] for col in cursor.description]
         st.success('Query executed with SUCCESS')
-        st.write(results)
-        st.dataframe(results, hide_index=False)
-
+        df = pd.DataFrame(results, columns=columns)
+        st.dataframe(df)
