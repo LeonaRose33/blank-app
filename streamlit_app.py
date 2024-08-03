@@ -15,5 +15,5 @@ with mysql.connector.connect(**CONNECTION_DB) as conn:
     if results:
         columns = [col[0] for col in cursor.description]
         st.success('Query executed with SUCCESS')      
-        st.dataframe(results, column_order=columns)
+        st.dataframe(results, hide_index=False)
 
