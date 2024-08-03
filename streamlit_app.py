@@ -12,9 +12,10 @@ with mysql.connector.connect(**CONNECTION_DB) as conn:
     query = "SELECT * FROM capacities"
     st.write(f'Execute \n{query}')
     cursor.execute(query)
+    st.success('Query executed with SUCCESS')
     results = cursor.fetchall()
-    if results:
-        columns = [col[0] for col in cursor.description]
-st.success('Query executed with SUCCESS')
-df = pd.DataFrame(results, columns=columns)
-st.dataframe(df)
+    
+if results:
+    columns = [col[0] for col in cursor.description]
+    df = pd.DataFrame(results, columns=columns)
+    st.dataframe(df)
